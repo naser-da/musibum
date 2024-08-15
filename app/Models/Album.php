@@ -8,4 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class Album extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'title',
+        'genre_id',
+        'artist_id',
+        'cover_image_id',
+        'release_date'
+    ];
+
+    public function cover()
+    {
+        return $this->morphMany('App\Models\Image', 'imageable');
+    }
 }

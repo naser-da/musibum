@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->foreignId('genre_id');
             $table->foreignId('artist_id');
-            $table->string('cover_image');
+            $table->foreignId('cover_image_id')->nullable();
             $table->date('release_date');
             $table->timestamps();
         });

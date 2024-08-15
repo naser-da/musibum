@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->foreignId('artist_id');
             $table->foreignId('album_id')->nullable()->comment('could be nullable if the track is a single release');
-            $table->foreignId('cover_image_id');
+            $table->foreignId('cover_image_id')->nullable();
             $table->integer('duration')->comment('track length in seconds');
             $table->date('release_date');
             $table->integer('track_number')->nullable()->comment('track order in the album');

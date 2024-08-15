@@ -5,17 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Artist extends Model
+class Image extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'name',
-        'avatar_id'
+        'imageable_id',
+        'imageable_type',
+        'filename'
     ];
 
-    public function avatar()
+    public function imageable()
     {
-        return $this->morphMany('App\Models\Image', 'imageable');
+        return $this->morphTo();
     }
+
+    
 }
