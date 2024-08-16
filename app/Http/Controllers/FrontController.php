@@ -9,8 +9,8 @@ class FrontController extends Controller
 {
     public function homepage()
     {
-        $albums = Album::paginate(9);
+        $albums = Album::all();
 
-        
+        return view('pages.front.homepage', compact('albums'));
     }
 }

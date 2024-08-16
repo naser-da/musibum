@@ -32,7 +32,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     
 });
 
-Route::get('/', [FrontController::class, 'index']);
+Route::get('/', [FrontController::class, 'homepage']);
 
 Route::get('/error', function () {
     abort(500);
